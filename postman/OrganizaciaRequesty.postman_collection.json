@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "2c83256b-e835-4501-833d-fd12192c2004",
+		"name": "OrganizaciaRequesty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "zamestnanci",
+			"item": [
+				{
+					"name": "GetRiaditelovFirmy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/zamestnanci/riaditelFirmy",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"zamestnanci",
+								"riaditelFirmy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetVsetkychZamestnancov",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/zamestnanci",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"zamestnanci"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetKonkretnehoZamestnanca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/zamestnanci/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"zamestnanci",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PridajDoDB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Meno\":\"Kamil\",\r\n    \"Priezvisko\":\"Kamilaj\",\r\n    \"Telefon\":\"0999999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/zamestnanci",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"zamestnanci"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpravVDP",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"ferovsky@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/zamestnanci/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"zamestnanci",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VymazZDB",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/zamestnanci/9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"zamestnanci",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "divizie",
+			"item": [
+				{
+					"name": "GetVsetkyDivizie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetZamestnancovVDivizii",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PridajDiviziu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nazov\" : \"Divizia_5\",\r\n    \"Popis\" : \"popis\",\r\n    \"PocetZamestnancov\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PridajZamestnancaDoDivizie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "19",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VymazZDivizie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetVeducehoDivizie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/10/novyVeduci?=",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"10",
+								"novyVeduci"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetVeduci",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/2/veduci",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"2",
+								"veduci"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projekty",
+			"item": [
+				{
+					"name": "GetProjektyDivizie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/2/projekty",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"2",
+								"projekty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetZamestnancovVProjekte",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/4/projekty/2/zamestnanciProjektu",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"4",
+								"projekty",
+								"2",
+								"zamestnanciProjektu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PridajDoProjektu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "19",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/1/projekty/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"1",
+								"projekty",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OdstranZProjektu",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/1/projekty/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"1",
+								"projekty",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "oddelenia",
+			"item": [
+				{
+					"name": "GetOddeleniaProjektu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/2/projekty/7/oddelenia",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"2",
+								"projekty",
+								"7",
+								"oddelenia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetZamestnancovVOddelenii",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/4/projekty/2/oddelenia/3/zamestnanciOddelenia",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"4",
+								"projekty",
+								"2",
+								"oddelenia",
+								"3",
+								"zamestnanciOddelenia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PridajDoOddelenia",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "19",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/1/projekty/6/oddelenia/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"1",
+								"projekty",
+								"6",
+								"oddelenia",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OdstranZOddelenia",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idZamestnanca",
+									"value": "19",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44381/firma/divizie/1/projekty/6/oddelenia/6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44381",
+							"path": [
+								"firma",
+								"divizie",
+								"1",
+								"projekty",
+								"6",
+								"oddelenia",
+								"6"
+							],
+							"query": [
+								{
+									"key": "idZamestnanca",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
