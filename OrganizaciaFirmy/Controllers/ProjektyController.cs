@@ -3,13 +3,16 @@ using Microsoft.EntityFrameworkCore;
 using OrganizaciaFirmy.Controllers.Exceptions;
 using OrganizaciaFirmy.Data;
 using OrganizaciaFirmy.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
+/**
+ * funkcie:
+ *      vrátenie projektov danej divízie
+ *      vrátenie zamestnancov v danom projekte
+ *      pridanie zamestnanca do daného projektu
+ *      odstránenie zamestnanca z daného projektu
+ */
 namespace OrganizaciaFirmy.Controllers
 {
     [Route("firma/divizie/{idDivizie}/{controller}")]

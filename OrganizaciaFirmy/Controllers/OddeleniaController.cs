@@ -3,12 +3,16 @@ using Microsoft.EntityFrameworkCore;
 using OrganizaciaFirmy.Controllers.Exceptions;
 using OrganizaciaFirmy.Data;
 using OrganizaciaFirmy.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+/**
+ *  funkcie: 
+ *      vrátenie oddelení daného projektu
+ *      vrátenie zamestnancov v danom oddelení
+ *      pridanie zamestnanca do oddelenia
+ *      odstránenie zamestnanca z oddelenia
+ */
 
 namespace OrganizaciaFirmy.Controllers
 {
@@ -58,7 +62,7 @@ namespace OrganizaciaFirmy.Controllers
             //dana divizia nebola najdena 
             if (diviz == null) { return BadRequest(_errOddelenieNotFound); }
 
-            DbSet<Zamestnanec> zamestnanci = _dbcontext.ZoznamZamestnancov; //zoznam vsetkych projektov
+            DbSet<Zamestnanec> zamestnanci = _dbcontext.ZoznamZamestnancov; //zoznam vsetkych zamestnancov
             IEnumerable<Zamestnanec> query = zamestnanci.AsQueryable().Where(z => z.OddelenieID == idOddelenia);
 
             return (query.Any()) ? (Ok(query)) : (Ok(ZamestnanciController._errEmptyDb));

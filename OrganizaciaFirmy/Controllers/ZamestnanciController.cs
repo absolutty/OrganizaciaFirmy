@@ -6,9 +6,16 @@ using OrganizaciaFirmy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+/**
+ * funkcie: 
+ *      vrátenie všetkých zamestnancov
+ *      vrátenie konkrétneho zamestnanca na základe id
+ *      vrátenie všetkých riaditeľov firmy
+ *      pridanie nového zamestnanca do databázy
+ *      upravenie zamestnanca na základe id
+ *      vymazanie zamestnanca na základe id
+ **/
 
 namespace OrganizaciaFirmy.Controllers
 {
@@ -46,9 +53,9 @@ namespace OrganizaciaFirmy.Controllers
         }
 
         [HttpGet("{id}")] 
-        public IActionResult GetKonkretnehoZamestnanca(int id)
+        public IActionResult GetKonkretnehoZamestnanca(int idZamestnanca)
         {
-            Zamestnanec z = _dbcontext.Find<Zamestnanec>(id);
+            Zamestnanec z = _dbcontext.Find<Zamestnanec>(idZamestnanca);
 
             return (z != null) ? Ok(z) : NotFound(_errNotFoundMSG);
         }
@@ -78,9 +85,9 @@ namespace OrganizaciaFirmy.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpravVDP(int id, [FromBody] Zamestnanec zamestnanec)
+        public IActionResult UpravVDP(int idZamestnanca, [FromBody] Zamestnanec zamestnanec)
         {
-            Zamestnanec upravovanyZamestnanec = _dbcontext.Find<Zamestnanec>(id);
+            Zamestnanec upravovanyZamestnanec = _dbcontext.Find<Zamestnanec>(idZamestnanca);
 
             if (upravovanyZamestnanec != null) //zamestnanec BOL najdeny
             {
@@ -104,12 +111,12 @@ namespace OrganizaciaFirmy.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult VymazZDB(int id)
+        public IActionResult VymazZDB(int idZamestnanca)
         {
-            Zamestnanec odstranovanyZamestnanec = _dbcontext.Find<Zamestnanec>(id);
+            Zamestnanec odstranovanyZamestnanec = _dbcontext.Find<Zamestnanec>(idZamestnanca);
 
             if (odstranovanyZamestnanec != null) //zamestnanec BOL najdeny
-            {
+            { 
                 _dbcontext.Remove<Zamestnanec>(odstranovanyZamestnanec);
                 _dbcontext.SaveChanges();
 

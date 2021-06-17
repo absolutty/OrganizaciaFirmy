@@ -3,15 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OrganizaciaFirmy.Data;
 using OrganizaciaFirmy.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace OrganizaciaFirmy.Controllers
 {
     /**
-     * ukony:
+     * funkcie:
      *      vratenie vsetkych divizii
      *      vratenie zamestnancov v konkretnej divizii
      *      pridanie novej divizie
@@ -37,8 +35,7 @@ namespace OrganizaciaFirmy.Controllers
             _dbcontext = dbcontext;
         }
 
-        // GET: firma/<ValuesController>
-        [HttpGet] //vrati vsetky divizie
+        [HttpGet] 
         public IActionResult GetVsetkyDivizie()
         {
             IEnumerable<Divizia> listDivizii = _dbcontext.ZoznamDivizii.ToList();
@@ -49,8 +46,7 @@ namespace OrganizaciaFirmy.Controllers
             return (listDivizii.Any()) ? Ok(listDivizii) :  Ok(_errEmptyDb);
         }
 
-        // GET firma/<ValuesController>/5
-        [HttpGet("{id}")] //vrati zamestnancov, kt. su v danej divizii
+        [HttpGet("{id}")] 
         public IActionResult GetZamestnancovVDivizii(int id)
         {
             Divizia d = _dbcontext.Find<Divizia>(id);
@@ -68,8 +64,7 @@ namespace OrganizaciaFirmy.Controllers
             }
         }
 
-        // POST firma/<ValuesController>
-        [HttpPost] //prida novu diviziu 
+        [HttpPost]
         public IActionResult PridajDiviziu([FromBody] Divizia novaDivizia)
         {
             try
@@ -84,8 +79,7 @@ namespace OrganizaciaFirmy.Controllers
             }
         }
 
-        // PUT firma/<ValuesController>/5
-        [HttpPut("{idDivizie}")]//prida zamestnanca do divizie na zaklade jeho id
+        [HttpPut("{idDivizie}")]
         public IActionResult PridajZamestnancaDoDivizie(int idDivizie, [FromForm] int idZamestnanca)
         {
             Zamestnanec z = _dbcontext.Find<Zamestnanec>(idZamestnanca); //pridavany zamestnanec
@@ -105,8 +99,7 @@ namespace OrganizaciaFirmy.Controllers
             return Ok();
         }
 
-        // DELETE firma/<ValuesController>/5
-        [HttpDelete("{idDivizie}")]//vymaze zamestnanca na zaklade jeho id
+        [HttpDelete("{idDivizie}")]
         public IActionResult VymazZDivizie(int idDivizie, [FromForm] int idZamestnanca)
         {
             Divizia d = _dbcontext.Find<Divizia>(idDivizie);
@@ -129,8 +122,7 @@ namespace OrganizaciaFirmy.Controllers
             return Ok();
         }
 
-        // PUT firma/<ValuesController>/5
-        [HttpPut("{idDivizie}/novyVeduci")]//prida zamestnanca na poziciu veduceho na zaklade jeho id
+        [HttpPut("{idDivizie}/novyVeduci")]
         public IActionResult SetVeducehoDivizie(int idDivizie, [FromForm] int idZamestnanca)
         {
             Zamestnanec z = _dbcontext.Find<Zamestnanec>(idZamestnanca); //urcovany zamestnanec
@@ -151,8 +143,7 @@ namespace OrganizaciaFirmy.Controllers
             return Ok();
         }
 
-        // GET firma/<ValuesController>/5
-        [HttpGet("{idDivizie}/veduci")] //vrati veduceho danej divizie
+        [HttpGet("{idDivizie}/veduci")] 
         public IActionResult GetVeduci(int idDivizie)
         {
             Divizia d = _dbcontext.Find<Divizia>(idDivizie);
