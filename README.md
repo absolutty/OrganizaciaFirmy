@@ -23,3 +23,14 @@ Projekt bol vytvorený vo Visual Studiu.
 - *https://localhost:44381/firma/divizie/10* ____ PUT: nastaví vedúceho zamestnanca divízie Id 10 [FromForm]
 - *https://localhost:44381/firma/divizie/2/veduci* ____ GET: vráti vedúceho divízie s Id 2
 
+**Projekty** controllers:
+- *https://localhost:44381/firma/divizie/2/projekty* ____ GET: vráti všetky projekty z divízie Id 2
+- *https://localhost:44381/firma/divizie/4/projekty/2/zamestnanciProjektu* ____ GET: vráti všetkých zamestnancov z divízie id 4, projekt Id 2
+- *https://localhost:44381/firma/divizie/1/projekty/6* ____ PUT: pridá zamestnanca do projektu s id 6  [FromForm]
+- *https://localhost:44381/firma/divizie/1/projekty/6* ____ DELETE: odstrani zamestnanca z projektu s id 6  [FromForm]
+
+**Oddelenia** controllers:
+- *https://localhost:44381/firma/divizie/2/projekty/7/oddelenia* ____ GET: vráti všetky oddelenia z projektu Id 7
+- *https://localhost:44381/firma/divizie/4/projekty/2/oddelenia/3/zamestnanciOddelenia* ____ GET: vráti zamestnancov z oddelenia 3
+- *https://localhost:44381/firma/divizie/1/projekty/6/oddelenia/6* ____ PUT: pridá zamestnancado oddelenia s id 6  [FromForm]
+- *https://localhost:44381/firma/divizie/1/projekty/6/oddelenia/6* ____ DELETE: odstrani zamestnanca z projektu s id 6 [FromForm]
