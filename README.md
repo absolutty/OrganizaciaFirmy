@@ -1,11 +1,10 @@
 # REST API – Organizačná štruktúra firmy
 Projekt bol vytvorený vo Visual Studiu. <br>
-V prípade nejakých nejasností, prípadne problémov s rozbehaním prosím kontaktujte ma.
-  - *kros.OrganizáciaFirmy/database* obsahuje súbory na vytvorenie databáz alebo na vloženie do databáz
+  - *OrganizáciaFirmy/database* obsahuje súbory na vytvorenie databáz alebo na vloženie do databáz
   - projekt obsahuje 4 databázy: dbo.ZoznamZamestnancov, dbo.ZoznamOddeleni, dbo.ZoznamProjektov a dbo.ZoznamDivizii
   - tie su herarchicky usporiadané: firma(všetci zamestnanci) → divízie → projekty → oddelenia
   - pri spustení projektu je v API zabudovaná automaticky generovaná dokumentácia pomocou Swagger-a.
-  - *kros.OrganizáciaFirmy/postman* obsahuje .json subor pre testovanie jednotlivých metód GET, POST, PUT a DELETE
+  - *OrganizáciaFirmy/postman* obsahuje .json subor pre testovanie jednotlivých metód GET, POST, PUT a DELETE
   - pre použitie API klienta je potrebné zmeniť v Postmanovi *localhost:44381* na localhosta daného počítača
 
 **Zamestnanci** controllers:
